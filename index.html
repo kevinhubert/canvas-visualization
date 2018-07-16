@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Canvas On The Cheap</title>
+    <link rel="stylesheet" href="../dist/css/styles.css">
+</head>
+
+<body>
+    <!-- Begin Main  -->
+    <main>
+        <div class="container">
+            <div class="l-product-options">
+                <div class="l-product-options__stage">
+
+                    <!-- Visible on default and with no frame -->
+                    <div class="cube-container is-active">
+                        <div class="cube">
+                            <div class="cube__side" style="background-image:url(../dist/img/beach.jpg)"></div>
+                            <div class="cube__front" style="background-image:url(../dist/img/beach.jpg)"></div>
+                        </div>
+                    </div>
+
+                    <!-- Visible when frame is selected -->
+                    <div class="frame-container">
+                        <div class="frame-container__frame hidden" style="background-image:url(../dist/img/frames/8x8/classic-brown.jpg);">
+                            <img class="frame-container__canvas" src="../dist/img/beach.jpg" />
+                        </div>
+                    </div>
+
+                </div>
+                <div class="l-product-options__groups">
+
+                    <h3>Wrap Depth</h3>
+                    <button class="button button--primary toggle-75">.75" wrap depth</button>
+                    <button class="button button--primary toggle-15">1.5" wrap depth</button>
+
+                    <h3>Border Color</h3>
+                    <button class="button button--primary toggle-border-black">Black Border</button>
+                    <button class="button button--primary toggle-border-white">White Border</button>
+                    <button class="button button--primary toggle-border-gray">Gray Border</button>
+
+                    <h3>Filter</h3>
+                    <button class="button button--primary toggle-filter-blackwhite">Black and White</button>
+                    <button class="button button--primary toggle-filter-sepia">Sepia</button>
+
+                    <h3>Frames</h3>
+                    <div class="frames-container">
+                        <button class="button button--primary frame-item toggle-frame-modern-brown" frame-type="modern-brown" frame-size="2">Modern Brown</button>
+                        <button class="button button--primary frame-item toggle-frame-modern-black" frame-type="modern-black" frame-size="2">Modern black</button>
+                        <button class="button button--primary frame-item toggle-frame-classic-brown" frame-type="classic-brown" frame-size="3.3">Classic Brown</button>
+                        <button class="button button--primary frame-item toggle-frame-classic-black" frame-type="classic-black" frame-size="3.3">Classic Black</button>
+                        <button class="button button--primary frame-item toggle-frame-brazillian-barnwood" frame-type="brazillian-barnwood" frame-size="3.5">Brazillian Barnwood</button>
+                    </div>
+                </div>
+            </div>
+    </main>
+    <!-- End Main -->
+
+    <script src="/partials/layout.js" type="module" defer></script>
+    <script src="../dist/js/bundle.js" defer></script>
+
+
+
+    <script>
+
+        const createClock = function () {
+            const clock = document.createElement('div');
+            document.querySelector('main').insertAdjacentElement('beforeend', clock);
+            const updateTime = function () {
+                const time = new Date().toLocaleTimeString();
+                clock.innerHTML = time;
+            }
+
+            setInterval(updateTime, 1000);
+        }()
+
+    </script>
+
+
+
+
+</body>
+
+</html>
